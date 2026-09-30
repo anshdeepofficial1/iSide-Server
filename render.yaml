@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: iside-server
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PORT
+        value: 8787
+      - key: HOST
+        value: 0.0.0.0
+      - key: SIGNING_PROVIDER
+        value: disabled
